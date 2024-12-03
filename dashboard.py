@@ -75,7 +75,41 @@ class CreateDashboard:
                     }
                 }
             },
-            "dynamic_structures": "",
+            "dynamic_structures": {
+                "introduction":{
+                    "text": "introduction.txt",
+                    "images": None
+                },
+                "linked_lists": {
+                    "text": "linked_lists.txt",
+                    "images": {
+                        "queue.png": None
+                    }
+                },
+                "double_lists": {
+                    "text": "double_lists.txt",
+                    "images": {
+                        "double_structure.png": None,
+                    }
+                },
+                "circular_lists": {
+                    "text": "circular_lists.txt",
+                    "images": {
+                        "circular_representation.png": None,
+                        "simple_circular": None
+                    }
+                },
+                "binary_tree": {
+                    "text": "binary_tree.txt",
+                    "images": {
+                        "introduction_tree.png": None,
+                        "tree_creation.png": None,
+                        "tree_elimination.png": None,
+                        "tree_insertion.png": None,
+                        "tree_parts.png": None
+                    }
+                }
+            },
             "sorting_algorithms": {
                 "introduction":{
                     "text": "introduction.txt",
@@ -112,7 +146,9 @@ class CreateDashboard:
         self.tabs = {
             "intro": ["Introducción"],
             "static_structures": ["Introducción", "Arreglos", "Asignación de Memoria Dinámica", "Colas", "Stacks"],
-            "sorting_algorithms": ["Introducción", "Bubble Sort", "Insertion Sort","Merge Sort", "Quick Sort"]
+            "dynamic_structures": ["Introducción", "Listas Ligadas", "Listas Doblemente Ligadas", "Listas Circulares",
+                                   "Árbol Binario"],
+            "sorting_algorithms": ["Introducción", "Bubble Sort", "Insertion Sort","Merge Sort", "Quick Sort"],
         }
         self.image_formats = [".jpg", ".png"]
         self.language_code = "c"
