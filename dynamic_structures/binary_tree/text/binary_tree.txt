@@ -1,0 +1,143 @@
+# Árbol binario
+
+Un árbol binario es una estructura de datos no lineal y jerárquica en la que cada nodo tiene como máximo dos hijos, denominados hijo izquierdo y hijo derecho . El nodo superior de un árbol binario se denomina raíz y los nodos inferiores se denominan hojas .
+
+introduction_tree.png
+
+Representación del árbol binario
+
+Cada nodo de un árbol binario tiene tres partes:
+
+- Datos
+- Puntero al niño de la izquierda
+- Puntero al niño correcto
+
+Declarar un nodo de un árbol binario
+
+El siguiente ejemplo demuestra la sintaxis para implementar árbol binario en C.
+
+code_implementation_trees.txt
+
+Ejemplo de creación de un árbol binario
+
+A continuación se muestra un ejemplo de creación de un árbol binario con cuatro nodos (2, 3, 4, 5)
+
+tree_creation.png
+
+code_creation_trees.txt
+
+En el código anterior, hemos creado cuatro nodos de árbol firstNode , secondNode , thirdNode y fourthNode con valores 2 , 3 , 4 y 5 respectivamente.
+
+Después de crear tres nodos, es necesario conectarlos para formar la estructura de árbol como se menciona en la imagen de arriba.
+
+Primero, conectamos el segundo nodo a la izquierda del primer nodo mediante firstNode->left = secondNode
+Después, conectamos el tercer nodo a la derecha del primer nodo mediante firstNode->right = thirdNode
+Por último, conectamos el cuarto nodo a la izquierda del segundo nodo mediante secondNode->left = fourthNod
+
+### Terminologías en árbol binario
+
+- Nodos: La parte fundamental de un árbol binario, donde cada nodo contiene datos y se vincula a dos nodos secundarios.
+
+- Raíz: el nodo superior de un árbol se denomina nodo raíz. No tiene padre y sirve como punto de partida para todos los nodos del árbol.
+
+- Nodo padre : nodo que tiene uno o más nodos secundarios. En un árbol binario, cada nodo puede tener como máximo dos nodos secundarios.
+
+- Nodo hijo: un nodo que es descendiente de otro nodo (su padre).
+
+- Nodo hoja: un nodo que no tiene ningún hijo o ambos hijos son nulos.
+
+- Nodo interno: un nodo que tiene al menos un hijo. Esto incluye todos los nodos excepto el nodo raíz y los nodos hoja .
+
+- Profundidad de un nodo: la cantidad de aristas desde un nodo específico hasta el nodo raíz. La profundidad del nodo raíz es cero.
+
+- Altura de un árbol binario: el número de nodos desde el nodo de hoja más profundo hasta el nodo raíz.
+
+El siguiente diagrama muestra todos estos términos en un árbol binario.
+
+tree_parts.png
+
+### Tipos de árboles binarios
+El árbol binario se puede clasificar en múltiples tipos según múltiples factores:
+
+##### Sobre la base del número de hijos
+
+- Árbol binario completo
+- Árbol binario degenerado
+- Árboles binarios sesgados
+
+##### Sobre la base de la finalización de niveles
+- Árbol binario completo
+- Árbol binario perfecto
+- Árbol binario equilibrado
+
+##### Sobre la base de los valores de los nodos:
+- Árbol de búsqueda binaria
+- Árbol AVL
+- Árbol rojo y negro
+- Árbol B
+- Árbol B+
+- Árbol de segmentos
+
+### Árbol AVL
+
+Un Árbol AVL es un árbol binario de búsqueda auto-balanceado donde, para cada nodo, la diferencia de alturas entre sus subárboles izquierdo y derecho no supera 1. Esto asegura que las operaciones básicas (búsqueda, inserción, eliminación) se realicen en tiempo  O(log n). Para mantener el equilibrio, se utilizan rotaciones simples y dobles después de cada operación de inserción o eliminación.
+
+code_avl_trees.txt
+
+##### Recorrido en árbol binario
+
+El recorrido de árboles es una técnica utilizada para visitar todos los nodos en un árbol de manera sistemática. Existen tres tipos principales de recorridos en árboles binarios:
+
+##### In-Order (LVR)
+
+Visita primero el subárbol izquierdo, luego el nodo raíz, y finalmente el subárbol derecho. Este tipo de recorrido devuelve los nodos en orden ascendente en un árbol binario de búsqueda.
+
+##### Pre-Order (VLR)
+
+Visita primero el nodo raíz, luego el subárbol izquierdo y finalmente el subárbol derecho. Se utiliza comúnmente para copiar árboles.
+
+##### Post-Order (LRV)
+
+Visita primero el subárbol izquierdo, luego el subárbol derecho y finalmente el nodo raíz. Es útil para borrar árboles o evaluar expresiones aritméticas.
+
+A continuación se muestra la implementación del algoritmo de recorrido en un árbol binario:
+
+code_traversal_trees.txt
+
+### Inserción en árbol binario
+
+Insertar elementos significa agregar un nuevo nodo al árbol binario. Como sabemos que no existe tal orden de elementos en el árbol binario, no tenemos que preocuparnos por el orden de los nodos en el árbol binario. Primero crearíamos un nodo raíz en caso de que el árbol esté vacío. Luego, las inserciones posteriores implican la búsqueda iterativa de un lugar vacío en cada nivel del árbol. Cuando se encuentra un nodo hijo izquierdo o derecho vacío, se inserta allí un nuevo nodo . Por convención, la inserción siempre comienza con el nodo hijo izquierdo.
+
+tree_insertion.png 
+
+code_insertion_trees.txt
+
+### Eliminación en árbol binario
+
+Eliminar un nodo de un árbol binario significa eliminar un nodo específico manteniendo la estructura del árbol. Primero, debemos encontrar el nodo que queremos eliminar recorriendo el árbol con cualquier método de recorrido. Luego, reemplazamos el valor del nodo con el valor del último nodo del árbol (que se encuentra recorriendo hasta la hoja más a la derecha) y luego eliminamos ese último nodo. De esta manera, la estructura del árbol no se verá afectada. Y recuerda verificar casos especiales, como intentar eliminar de un árbol vacío, para evitar problemas.
+
+Nota: No existe una regla específica de eliminación, pero siempre nos aseguramos de que durante la eliminación se preserve el árbol binario propiamente dicho.
+
+tree_elimination.png
+
+code_eliminination_trees.txt
+
+### Ventajas del árbol binario
+
+- Búsqueda eficiente: los árboles de búsqueda binaria (una variación del árbol binario) son eficientes cuando se busca un elemento específico, ya que cada nodo tiene como máximo dos nodos secundarios en comparación con las listas enlazadas y las matrices.
+
+- Eficiencia de memoria: los árboles binarios requieren menos memoria en comparación con otras estructuras de datos de árboles, por lo tanto, son eficientes en el uso de la memoria.
+
+- Los árboles binarios son relativamente fáciles de implementar y comprender, ya que cada nodo tiene como máximo dos hijos: el hijo izquierdo y el hijo derecho.
+
+### Desventajas del árbol binario
+
+- Estructura limitada:  los árboles binarios están limitados a dos nodos secundarios por nodo, lo que puede limitar su utilidad en ciertas aplicaciones. Por ejemplo, si un árbol requiere más de dos nodos secundarios por nodo, puede ser más adecuada una estructura de árbol diferente.
+
+- Árboles no balanceados:  los árboles binarios no balanceados, en los que un subárbol es significativamente más grande que el otro, pueden generar operaciones de búsqueda ineficientes. Esto puede ocurrir si el árbol no está balanceado correctamente o si los datos se insertan en un orden no aleatorio.
+
+- Ineficiencia de espacio:  los árboles binarios pueden ser ineficientes en términos de espacio en comparación con otras estructuras de datos, como matrices y listas enlazadas. Esto se debe a que cada nodo requiere dos referencias o punteros secundarios, lo que puede suponer una cantidad significativa de sobrecarga de memoria para árboles grandes.
+
+- Rendimiento lento en los peores escenarios:  en el peor de los casos, un árbol binario puede degenerarse o distorsionarse, lo que significa que cada nodo tiene solo un hijo. En este caso, las operaciones de búsqueda en el árbol de búsqueda binaria (una variación del árbol binario) pueden degradarse a una complejidad temporal de O(n), donde n es la cantidad de nodos en el árbol.
+
+https://www.javatpoint.com/binary-tree

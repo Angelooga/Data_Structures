@@ -1,0 +1,33 @@
+# Cola usando lista enlazada
+
+Una cola es una estructura de datos lineal que sigue el orden de operaciones FIFO (First In First Out). Esto significa que el primer elemento que se agregue a la cola será el primero en eliminarse. 
+
+### Implementación de cola mediante lista enlazada 
+
+Una cola se implementa generalmente utilizando una matriz, pero la limitación de este tipo de cola es que la memoria ocupada por la matriz es fija sin importar cuántos elementos haya en la cola. En la cola implementada utilizando una lista enlazada, el tamaño ocupado por la lista enlazada será igual al número de elementos en la cola. Además, su tamaño es dinámico, lo que significa que el tamaño cambiará automáticamente de acuerdo con los elementos presentes.
+
+queue.png
+
+### Representación de colas enlazadas en C
+
+En C, la cola que se implementa mediante una lista enlazada se puede representar mediante punteros a los nodos delantero y trasero de la lista enlazada. Cada nodo de esa lista enlazada representa un elemento de la cola. El tipo de lista enlazada que se utiliza en este caso es una lista enlazada simple en la que cada nodo consta de un campo de datos y el puntero siguiente.
+
+### Función de puesta en cola
+La función enqueue agregará un nuevo elemento a la cola. Para mantener la complejidad temporal y espacial de O(1), insertaremos el nuevo elemento al final de la lista enlazada. El elemento que se encuentre al frente será el elemento que se insertó primero.
+
+Necesitamos verificar si hay desbordamiento de cola (cuando intentamos ingresar en una cola llena).
+
+### Función de desencolar
+
+La función de dequeue eliminará el elemento frontal de la cola. El elemento frontal es el que se insertó primero y estará presente al principio de la lista enlazada.
+
+El siguiente ejemplo demuestra cómo implementar una cola utilizando una lista enlazada en C.
+
+code_linkedlists.txt
+
+### Beneficios de la cola de listas enlazadas en C
+
+- La gestión dinámica de la memoria de la lista enlazada proporciona un tamaño dinámico a la cola que cambia con el número de elementos.
+- Rara vez alcanza la condición de desbordamiento de la cola.
+
+https://www.javatpoint.com/singly-linked-list

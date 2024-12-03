@@ -1,0 +1,76 @@
+// C Program to insert a node at the end of 
+//doubly linked list
+
+#include <stdio.h>
+
+struct Node {
+    int data;
+    struct Node *next;
+    struct Node *prev;
+};
+
+// Function to create a new node with the given data
+struct Node *createNode(int new_data) {
+    struct Node *new_node =
+    (struct Node *)malloc(sizeof(struct Node));
+    new_node->data = new_data;
+    new_node->next = NULL;
+    return new_node;
+}
+
+// Function to insert a new node at the end of the 
+//doubly linked list
+struct Node* insertEnd(struct Node *head, int new_data) {
+    struct Node *new_node = createNode(new_data);
+
+    // If the linked list is empty, set the
+ 	//new node as the head
+    if (head == NULL) {
+        head = new_node;
+    } else {
+        struct Node *curr = head;
+        while (curr->next != NULL) {
+            curr = curr->next;
+        }
+
+        // Set the next of last node to new node
+        curr->next = new_node;
+        // Set prev of new node to last node
+        new_node->prev = curr;
+    }
+
+    return head;
+}
+
+void printList(struct Node *head) {
+    struct Node *curr = head;
+    while (curr != NULL) {
+        printf("%d ", curr->data);
+        curr = curr->next;
+    }
+    printf("\n");
+}
+
+int main() {
+  
+    // Create a hardcoded doubly linked list:
+    // 1 <-> 2 <-> 3
+    struct Node *head = createNode(1);
+    head->next = createNode(2);
+    head->next->prev = head;
+    head->next->next = createNode(3);
+    head->next->next->prev = head->next;
+
+    // Print the original list
+    printf("Original Linked List: ");
+    printList(head);
+
+    // Insert a new node with data 4 at the end
+    printf("Inserting Node with data 4 at the end: ");
+    head = insertEnd(head, 4);
+
+    // Print the updated list
+    printList(head);
+
+    return 0;
+}

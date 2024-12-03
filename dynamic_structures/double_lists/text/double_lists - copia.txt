@@ -1,0 +1,131 @@
+# Lista doblemente enlazada
+
+Una lista doblemente enlazada es una estructura de datos donde cada nodo contiene tres campos: un valor y dos punteros que apuntan al nodo anterior y al siguiente. Esto permite recorrer la lista en ambas direcciones, a diferencia de una lista simplemente enlazada. Esta estructura es útil en aplicaciones donde se requieren operaciones frecuentes de inserción y eliminación en ambas direcciones, como en la implementación de editores de texto, buffers circulares o sistemas de navegación hacia adelante y atrás.
+
+### Representación de una lista doblemente enlazada en una estructura de datos
+
+En una estructura de datos, una lista doblemente enlazada se representa mediante nodos que tienen tres campos:
+
+- Datos
+- Un puntero al siguiente nodo (next)
+- Un puntero al nodo anterior (prev)
+
+double_structure.png
+
+### Definición de nodo
+
+Así es como se representa típicamente un nodo en una lista doblemente enlazada:
+
+code_representation.txt
+
+Cada nodo de una lista doblemente enlazada contiene los datos que contiene, un puntero al siguiente nodo de la lista y un puntero al nodo anterior de la lista. Al vincular estos nodos entre sí mediante los punteros next y prev , podemos recorrer la lista en ambas direcciones (hacia adelante y hacia atrás), lo que es una característica clave de una lista doblemente enlazada.
+
+### Recorrido en la lista doblemente enlazada 
+
+Para recorrer la lista doblemente, podemos utilizar los siguientes pasos:
+
+a. Travesía hacia adelante:
+
+- Inicializa un puntero al encabezado de la lista enlazada.
+- Mientras el puntero no sea nulo:
+	Visita los datos en el nodo actual.
+	Mueva el puntero al siguiente nodo.
+
+b. Recorrido hacia atrás:
+
+- Inicializa un puntero a la cola de la lista enlazada.
+- Mientras el puntero no sea nulo:
+	Visita los datos en el nodo actual.
+	Mueva el puntero al nodo anterior.
+
+A continuación se muestra la implementación del enfoque anterior:
+
+code_travel.txt
+
+### Encontrar la longitud de una lista doblemente enlazada 
+
+Para encontrar la longitud de una lista doble, podemos utilizar los siguientes pasos:
+
+- Comience por el principio de la lista.
+- Recorra la lista, contando cada nodo visitado.
+- Devuelve el recuento total de nodos como la longitud de la lista.
+
+A continuación se muestra la implementación del enfoque anterior:
+
+code_length.txt
+
+### Inserción al principio en lista doblemente enlazada
+
+Para insertar un nuevo nodo al comienzo de la lista doble, podemos utilizar los siguientes pasos:
+
+- Crea un nuevo nodo, digamos  new_node  con los datos dados y establece su puntero anterior en nulo,  new_node->prev = NULL.
+
+- Establezca el siguiente puntero de new_node en la cabecera actual,  new_node->next = head.
+Si la lista enlazada no está vacía, actualiza el puntero anterior de la cabeza actual a new_node,  head->prev = new_node.
+
+- Devuelve new_node como el encabezado de la lista vinculada actualizada.
+
+A continuación se muestra la implementación del enfoque anterior:
+
+code_insertion.txt
+
+### Inserción al final de una lista doblemente enlazada
+
+Para insertar un nuevo nodo al final de la lista doblemente enlazada, podemos utilizar los siguientes pasos:
+
+- Asignar memoria para un nuevo nodo y asignar el valor proporcionado a su campo de datos.
+- Inicializa el siguiente puntero del nuevo nodo a nullptr.
+- Si la lista está vacía:
+	Establezca el puntero anterior del nuevo nodo en nullptr.
+	Actualice el puntero de la cabeza para que apunte al nuevo nodo.
+- Si la lista no está vacía:
+- Recorre la lista comenzando desde el principio hasta llegar al último nodo.
+- Establezca el siguiente puntero del último nodo para que apunte al nuevo nodo.
+- Establezca el puntero anterior del nuevo nodo para que apunte al último nodo.
+
+A continuación se muestra la implementación del enfoque anterior:
+
+code_insertionend.txt
+
+### Inserción en una posición específica en una lista doblemente enlazada
+
+Para insertar un nodo en una posición específica en una lista doblemente enlazada, podemos utilizar los siguientes pasos:
+
+Para insertar un nuevo nodo en una posición específica,
+
+- Si la posición = 1, crea un nuevo nodo y conviértelo en el encabezado de la lista enlazada y devuélvelo.
+- De lo contrario, recorra la lista para llegar al nodo en la posición – 1, digamos  curr .
+- Si la posición es válida, crea un nuevo nodo con los datos proporcionados, digamos  new_node .
+- Actualiza el siguiente puntero del nuevo nodo al siguiente del nodo actual y el puntero anterior del nuevo nodo al nodo actual,  new_node->next = curr->next  y  new_node->prev = curr.
+- De manera similar, actualice el siguiente puntero del nodo actual al nuevo nodo,  curr->next = new_node . 
+- Si el nuevo nodo no es el último nodo, actualice el puntero anterior del nuevo nodo junto al nuevo nodo,  new_node->next->prev = new_node.
+
+A continuación se muestra la implementación del enfoque anterior:
+
+code_insertspec.txt
+
+### Eliminación al principio de una lista doblemente enlazada
+
+Para eliminar un nodo al inicio en una lista doblemente enlazada, podemos utilizar los siguientes pasos:
+
+- Comprueba si la lista está vacía, no hay nada que eliminar. Regresa.
+- Almacene el puntero de cabeza en una variable, digamos temp .
+- Actualiza el encabezado de la lista enlazada al nodo próximo al encabezado actual, head = head->next .
+- Si el nuevo encabezado no es NULL, actualiza el puntero anterior del nuevo encabezado a NULL, head->prev = NULL .
+
+A continuación se muestra la implementación del enfoque anterior:
+
+code_elimination.txt
+
+### Eliminación al final de una lista doblemente enlazada
+
+Para eliminar un nodo al final de una lista doblemente enlazada, podemos utilizar los siguientes pasos:
+
+- Comprueba si la lista doblemente enlazada está vacía. Si está vacía, no hay nada que eliminar.
+- Si la lista no está vacía, entonces muévase al último nodo de la lista doblemente enlazada, digamos curr .
+- Actualiza el siguiente puntero del segundo nodo al último a NULL, curr->prev->next NULL.
+- Libere la memoria asignada para el nodo que fue eliminado.
+
+A continuación se muestra la implementación del enfoque anterior:
+
+code_eliminationend.txt

@@ -1,0 +1,23 @@
+// Node structure
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+
+// Function to create a new node
+struct Node *createNode(int value){
+
+    // Allocate memory
+    struct Node *newNode = 
+      (struct Node *)malloc(sizeof(struct Node));
+
+    // Set the data
+    newNode->data = value;
+  
+    // Initialize next to NULL
+    newNode->next = NULL;
+  
+    // Return the new node
+    return newNode;
+}

@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Node {
+    int data;
+    struct Node* left;
+    struct Node* right;
+};
+
+struct Node* createNode(int d);
+
+// Function to insert a new node in the binary tree
+struct Node* insert(struct Node* root, int key) {
+    if (root == NULL) return createNode(key);
+
+    // Create a queue for level order traversal
+    struct Node* queue[100];
+    int front = 0, rear = 0;
+    queue[rear++] = root;
+
+    while (front < rear) {
+        struct Node* temp = queue[front++];
+
+        // If left child is empty, insert the new node here
+        if (temp->left == NULL) {
+            temp->left = createNode(key);
+            break;
+        } else {
+            queue[rear++] = temp->left;
+        }
+
+        // If right child is empty, insert the new node here
+        if (temp->right == NULL) {
+            temp->right = createNode(key);
+            break;
+        } else {
+            queue[rear++] = temp->right;
+        }
+    }
+    return root;
+}
+
+void inorder(struct Node* root) {
+    if (root == NULL) return;
+    inorder(root->left);
+    printf("%d ", root->data);
+    inorder(root->right);
+}
+
+struct Node* createNode(int d) {
+    struct Node* newNode = 
+      (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = d;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
+}
+
+int main() {
+    struct Node* root = createNode(2);
+    root->left = createNode(3);
+    root->right = createNode(4);
+    root->left->left = createNode(5);
+
+    printf("Inorder traversal before insertion: ");
+    inorder(root);
+    printf("\n");
+
+    int key = 6;
+    root = insert(root, key);
+
+    printf("Inorder traversal after insertion: ");
+    inorder(root);
+    printf("\n");
+
+    return 0;
+}

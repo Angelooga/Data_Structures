@@ -1,0 +1,17 @@
+ Allocate memory for nodes
+struct Node first = 
+  (struct Node )malloc(sizeof(struct Node));
+struct Node second =
+  (struct Node )malloc(sizeof(struct Node));
+struct Node last =
+  (struct Node )malloc(sizeof(struct Node));
+
+ Initilize nodes
+first-data = 2;
+second-data = 3;
+last-data = 4;
+
+ Connect nodes
+first-next = second;
+second-next = last;
+last-next = first;

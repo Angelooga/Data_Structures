@@ -1,0 +1,64 @@
+# Lista enlazada circularmente
+
+Una lista enlazada circular es un tipo especial de lista enlazada en la que todos los nodos están conectados para formar un círculo. A diferencia de una lista enlazada normal, que termina con un nodo que apunta a NULL, el último nodo de una lista enlazada circular apunta al primer nodo. Esto significa que puedes seguir recorriendo la lista sin llegar nunca a un valor NULL.
+
+### Lista circular enlazada simple
+
+En una lista enlazada simple circular , cada nodo tiene un solo puntero llamado puntero next. El puntero siguiente del último nodo apunta al primer nodo y esto da como resultado la formación de un círculo. En este tipo de lista enlazada, solo podemos movernos por la lista en una dirección.
+
+simple_circular.png 
+
+### Lista circular doblemente enlazada
+
+En una lista doblemente enlazada circular, cada nodo tiene dos punteros, prev y next, de forma similar a la lista doblemente enlazada. El puntero prev apunta al nodo anterior y el next apunta al nodo siguiente. En este caso, además de que el último nodo almacena la dirección del primer nodo, el primer nodo también almacenará la dirección del último nodo.
+
+circular_representation.png
+
+### Representación de una lista enlazada simple circular
+
+code_representation_circular.txt
+
+En el código anterior, cada nodo tiene datos y un puntero al siguiente nodo. Cuando creamos varios nodos para una lista enlazada circular, solo necesitamos conectar el último nodo con el primero.
+
+### Ejemplo de creación de una lista enlazada circular
+
+A continuación se muestra un ejemplo de creación de una lista enlazada circular con tres nodos (2, 3, 4):
+
+code_example_circular.txt
+
+En el código anterior, hemos creado tres nodos, primero, segundo y último, con valores 2, 3 y 4 respectivamente.
+
+### Inserción en una Lista vacía en la lista enlazada circular
+
+Para insertar un nodo en una lista enlazada circular vacía, se crea un nuevo nodo con los datos dados, y después se establece su próximo puntero para que apunte a sí mismo y actualiza el último puntero para hacer referencia a este nuevo nodo.
+
+code_insertion_empty_circular.txt
+
+### Inserción al principio en lista enlazada circular
+
+Para insertar un nuevo nodo al principio de una lista enlazada circular, primero creamos el nuevo nodo y le asignamos memoria. Si la lista está vacía (lo que se indica porque el puntero last es NULL ), hacemos que el nuevo nodo apunte a sí mismo. Si la lista ya contiene nodos, entonces establecemos el puntero next del nuevo nodo para que apunte al encabezado actual de la lista (que es last->next ), y luego actualizamos el puntero next del último nodo para que apunte al nuevo nodo. Esto mantiene la estructura circular de la lista.
+
+code_insertion_circular.txt
+
+###  Inserción al final en lista enlazada circular
+
+Para insertar un nuevo nodo al final de una lista enlazada circular, primero creamos el nuevo nodo y le asignamos memoria. Si la lista está vacía (el puntero de la media, el último o la cola es NULL), inicializamos la lista con el nuevo nodo y hacemos que apunte a sí mismo para formar una estructura circular. Si la lista ya contiene nodos, entonces establecemos el puntero next del nuevo nodo para que apunte al encabezado actual (que es tail->next), luego actualizamos el puntero next de la cola actual para que apunte al nuevo nodo. Finalmente, actualizamos el puntero tail al nuevo nodo. Esto garantizará que el nuevo nodo sea ahora el último nodo de la lista mientras se mantiene el enlace circular.
+
+code_insertionend_circular.txt
+
+### Eliminar el primer nodo de la lista enlazada circular
+
+Para eliminar el primer nodo de una lista enlazada circular, primero verificamos si la lista está vacía. Si lo está, imprimimos un mensaje y devolvemos NULL. Si la lista contiene solo un nodo (el nodo principal es el mismo que el último), eliminamos ese nodo y establecemos el puntero último en NULL. Si hay varios nodos, actualizamos el puntero último->siguiente para omitir el nodo principal y eliminarlo efectivamente de la lista. Luego eliminamos el nodo principal para liberar la memoria asignada. Finalmente, devolvemos el puntero último actualizado , que aún apunta al último nodo de la lista.
+
+code_elimination_circular.txt
+
+### Eliminación al final de la lista enlazada circular
+
+Para eliminar el último nodo de una lista enlazada circular, primero verificamos si la lista está vacía. Si lo está, imprimimos un mensaje y devolvemos nullptr. Si la lista contiene solo un nodo (donde el encabezado es el mismo que el último ), eliminamos ese nodo y establecemos el último en nullptr. Para listas con múltiples nodos, necesitamos recorrer la lista para encontrar el segundo último nodo . Hacemos esto comenzando desde el encabezado y moviéndonos a través de la lista hasta que llegamos al nodo cuyo próximo puntero apunta a último . Una vez que encontramos el segundo último nodo, actualizamos su próximo puntero para que apunte de nuevo al encabezado, eliminando así efectivamente el último nodo de la lista. Luego eliminamos el último nodo para liberar memoria y devolvemos el puntero último actualizado , que ahora apunta al último nodo.
+
+code_eliminationend_circular.txt
+
+https://www.javatpoint.com/circular-singly-linked-list
+
+
+

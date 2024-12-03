@@ -1,0 +1,78 @@
+// C Program to delete a node from the end of 
+//Doubly Linked List
+
+#include <stdio.h>
+
+struct Node {
+    int data;
+    struct Node* prev;
+    struct Node* next;
+};
+
+// Function to delete the last node of the 
+//doubly linked list
+struct Node* delLast(struct Node *head) {
+  
+    // Corner cases
+    if (head == NULL)
+        return NULL;
+    if (head->next == NULL) {
+        free(head);
+        return NULL;
+    }
+
+    // Traverse to the last node
+    struct Node *curr = head;
+    while (curr->next != NULL)
+        curr = curr->next;
+
+    // Update the previous node's next pointer
+    curr->prev->next = NULL;
+
+    // Delete the last node
+    free(curr);
+
+    // Return the updated head
+    return head;
+}
+
+// Function to print the list
+void printList(struct Node *head) {
+    struct Node *curr = head;
+    while (curr != NULL) {
+        printf("%d ", curr->data);
+        curr = curr->next;
+    }
+    printf("\n");
+}
+
+// Function to create a new node
+struct Node* createNode(int data) {
+    struct Node *newNode =
+      (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->prev = NULL;
+    newNode->next = NULL;
+    return newNode;
+}
+
+int main() {
+  
+    // Create a hardcoded doubly linked list:
+    // 1 <-> 2 <-> 3
+    struct Node *head = createNode(1);
+    head->next = createNode(2);
+    head->next->prev = head;
+    head->next->next = createNode(3);
+    head->next->next->prev = head->next;
+
+    printf("Original Linked List: ");
+    printList(head);
+
+    printf("After Deletion at the end: ");
+    head = delLast(head);
+
+    printList(head);
+
+    return 0;
+}

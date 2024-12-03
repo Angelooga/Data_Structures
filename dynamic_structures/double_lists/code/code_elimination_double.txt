@@ -1,0 +1,71 @@
+// C Program to delete a node from the
+// beginning of Doubly Linked List
+
+#include <stdio.h>
+
+struct Node {
+    int data;
+    struct Node *prev;
+    struct Node *next;
+};
+
+// Function to create a new node
+struct Node *createNode(int data) {
+    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->prev = NULL;
+    newNode->next = NULL;
+    return newNode;
+}
+
+// Function to delete the first node (head) of the list
+// and return the second node as the new head
+struct Node *delHead(struct Node *head) {
+    // If empty, return NULL
+    if (head == NULL)
+        return NULL;
+
+    // Store in temp for deletion later
+    struct Node *temp = head;
+
+    // Move head to the next node
+    head = head->next;
+
+    // Set prev of the new head
+    if (head != NULL)
+        head->prev = NULL;
+
+    // Free memory and return new head
+    free(temp);
+    return head;
+}
+
+void printList(struct Node *head) {
+    struct Node *curr = head;
+    while (curr != NULL) {
+        printf("%d ", curr->data);
+        curr = curr->next;
+    }
+    printf("\n");
+}
+
+int main() {
+
+    // Create a hardcoded doubly linked list:
+    // 1 <-> 2 <-> 3
+    struct Node *head = createNode(1);
+    head->next = createNode(2);
+    head->next->prev = head;
+    head->next->next = createNode(3);
+    head->next->next->prev = head->next;
+
+    printf("Original Linked List: ");
+    printList(head);
+
+    printf("After Deletion at the beginning: ");
+    head = delHead(head);
+
+    printList(head);
+
+    return 0;
+}

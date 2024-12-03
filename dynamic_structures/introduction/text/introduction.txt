@@ -1,0 +1,55 @@
+# Estructuras de Datos Dinámicas
+
+### ¿Qué es una estructura de datos dinámica?
+
+Las estructuras de datos dinámicas son aquellas que permiten modificar su tamaño en tiempo de ejecución, adaptándose dinámicamente a las necesidades de almacenamiento. Estas estructuras se gestionan en memoria dinámica (heap), lo que significa que la cantidad de espacio asignado puede cambiar según sea necesario durante la ejecución del programa.
+
+
+### Características
+
+##### Alocación dinámica
+
+El tamaño de la estructura puede aumentar o disminuir según los requisitos en tiempo de ejecución.
+
+##### Flexibilidad
+
+Permiten almacenar datos heterogéneos o grandes volúmenes de información sin necesidad de definir un tamaño fijo al inicio.
+
+##### Uso de punteros
+
+Estas estructuras generalmente utilizan referencias o punteros para enlazar sus elementos.
+
+##### Organización no contigua
+
+Los datos no necesitan estar en posiciones consecutivas de memoria, lo que facilita la gestión eficiente de los recursos.
+
+### Ejemplos comunes
+
+- Listas enlazadas (simples, dobles, circulares)
+- Pilas y colas (cuando se implementan con listas enlazadas)
+- Árboles (binarios, AVL, B+ Trees, etc.)
+- Grafos
+
+### Ventajas 
+
+- Eficiencia en el uso de memoria: Solo se usa la memoria que realmente se necesita en cada momento, evitando asignaciones estáticas excesivas.
+
+- Inserción y eliminación eficientes: En estructuras como listas enlazadas, añadir o quitar elementos es rápido y no requiere desplazamientos de datos como en los arreglos.
+
+- Capacidad de crecimiento: Pueden adaptarse automáticamente a los cambios en la cantidad de datos que se manejan.
+
+- Facilidad para implementar estructuras complejas: Como árboles o grafos, que requieren conexiones dinámicas entre elementos.
+
+
+### Desventajas
+
+- Mayor complejidad: El manejo de punteros y referencias puede hacer que la implementación y depuración sean más complicadas.
+
+- Fragmentación de memoria: Al asignar y liberar memoria dinámicamente, puede generarse fragmentación, lo que afecta el rendimiento.
+
+- Mayor consumo de recursos: Las operaciones dinámicas suelen requerir más tiempo debido a la necesidad de gestionar memoria (malloc, free, etc.).
+
+- Riesgo de errores: Es más probable cometer errores como fugas de memoria (memory leaks) o accesos inválidos (dangling pointers).
+
+https://www.geeksforgeeks.org/static-data-structure-vs-dynamic-data-structure/ 
+
