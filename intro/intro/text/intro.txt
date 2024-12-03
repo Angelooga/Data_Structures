@@ -1,0 +1,79 @@
+# Estructuras de Datos
+
+### ¿Qué son las estructuras de datos?
+
+Las estructuras de datos son herramientas fundamentales en programación que combinan tipos de datos primitivos como números, caracteres, enteros y booleanos en formatos organizados. Mientras que los tipos primitivos contienen solo un valor, las estructuras de datos permiten realizar operaciones más complejas como ordenar, buscar, insertar y eliminar. Por ejemplo, si un equipo de ventas desea registrar cifras diarias de ventas, puede almacenar estos valores en un arreglo en lugar de gestionarlos individualmente.
+
+En C, un ejemplo de un arreglo sería:
+
+arreglo_c.png
+
+Este enfoque no solo permite almacenar los datos en un solo lugar, sino también realizar operaciones sobre ellos, ya sea a nivel individual (manipular un valor específico) o grupal (calcular promedios, ordenar, etc.).
+
+### ¿Porqué son importantes las estructuras de datos?
+
+Las estructuras de datos son vitales porque simplifican el manejo de grandes volúmenes de información, haciéndola más eficiente y comprensible para los sistemas computacionales. Al organizar lógicamente los elementos, facilitan el procesamiento y mejoran el rendimiento del código. Estas estructuras son esenciales en áreas como:
+
+- Sistemas operativos: Para manejar procesos y recursos.
+- Bases de datos: Donde los datos necesitan ser organizados y accesibles rápidamente.
+- Machine Learning: Para procesar grandes conjuntos de datos en modelos predictivos.
+- Blockchain, gráficos y análisis: Donde la eficiencia y organización son claves.
+
+##### Estructuras de datos y algoritmos
+
+En la programación, el concepto de DSA (Estructuras de Datos y Algoritmos) combina estas herramientas con algoritmos, que son conjuntos de pasos específicos diseñados para resolver tareas computacionales. Los DSA son fundamentales porque abordan dos desafíos principales:
+
+- Complejidad temporal: Reducir el tiempo que toma procesar una tarea.
+- Complejidad espacial: Optimizar el uso de la memoria para almacenar datos.
+- Por ejemplo, un algoritmo eficiente para ordenar datos podría depender del tipo de estructura utilizada, como un arreglo o un árbol binario.
+
+##### Programación dinámica 
+
+Las estructuras de datos también son cruciales en la programación dinámica, una técnica que divide un problema complejo en subproblemas más manejables mediante recursión. La solución final se construye ensamblando las respuestas a estos subproblemas.
+
+Durante este proceso, las estructuras de datos:
+
+- Guardan las soluciones parciales.
+- Mantienen los datos organizados.
+- Aseguran que el programa no repita cálculos innecesarios.
+- Por ejemplo, al resolver un problema matemático como la secuencia de Fibonacci, un arreglo puede almacenar los resultados previos para evitar cálculos redundantes.
+
+### Ejemplos
+
+##### Arreglos: 
+Son colecciones de elementos en un orden específico, generalmente del mismo tipo. Se acceden mediante índices, y se implementan típicamente en memoria contigua. Los arreglos pueden ser de longitud fija o redimensionables, según el lenguaje de programación.
+- Ventajas: Acceso rápido a elementos individuales.
+- Desventajas: La inserción o eliminación puede ser costosa si implica mover elementos.
+
+arreglos.png
+
+##### Listas Enlazadas: 
+Compuestas por nodos, donde cada nodo contiene un valor y una referencia al siguiente.
+- Ventajas: Inserción y eliminación eficientes en cualquier posición.
+- Desventajas: Acceso más lento a elementos individuales, ya que requiere recorrer la lista desde el principio.
+
+lista-enlazada.jpg
+
+##### Grafos: 
+Representan relaciones entre entidades mediante nodos (vértices) y aristas (conexiones). Se utilizan en aplicaciones como redes sociales, rutas de transporte y redes informáticas.
+- Características: Pueden ser dirigidos o no dirigidos, cíclicos o acíclicos.
+- Operaciones comunes: Búsqueda en profundidad (DFS) y búsqueda en amplitud (BFS).
+
+grafos.png
+
+##### Pilas y Colas:
+- Pilas: Siguen el principio LIFO (Último en entrar, primero en salir).
+- Colas: Operan bajo el principio FIFO (Primero en entrar, primero en salir).
+
+pilas_colas.png
+
+##### Árboles: 
+Estructuras jerárquicas donde un nodo raíz conecta con subnodos. Son esenciales para búsquedas y almacenamiento jerárquico.
+- Ejemplos: Árboles binarios, AVL y B-trees.
+- Aplicaciones: Bases de datos, sistemas de archivos y algoritmos de búsqueda.
+
+arbol.png
+
+https://www.ibm.com/think/topics/data-structure
+
+https://en.wikipedia.org/wiki/Data_structure
