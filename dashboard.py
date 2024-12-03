@@ -4,13 +4,10 @@ import streamlit as st
 import subprocess
 import os
 
-# b0397a76fb2b6b66b20aec7efdd912
-# 11b56774af2ce105e788290a0f27e612ecfb7d7c54dd67c23a6cfad9e6875f0d
-
 # JDoodle API settings
 API_URL = "https://api.jdoodle.com/v1/execute"
-CLIENT_ID = "b0397a76fb2b6b66b20aec7efdd912"
-CLIENT_SECRET = "11b56774af2ce105e788290a0f27e612ecfb7d7c54dd67c23a6cfad9e6875f0d"
+CLIENT_ID = st.secrets["client_id"]
+CLIENT_SECRET = st.secrets["client_secret"]
 
 def compile_c_code(api_url, client_id, client_secret, code):
     payload = {
