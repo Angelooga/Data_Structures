@@ -20,7 +20,6 @@ def compile_c_code(api_url, client_id, client_secret, code):
     }
     response = requests.post(api_url, json=payload)
     if response.status_code == 200:
-        st.write(response.json())
         return response.json()
     else:
         return {"error": f"Error {response.status_code}: {response.text}"}
