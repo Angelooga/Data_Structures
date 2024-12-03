@@ -131,12 +131,11 @@ class CreateDashboard:
         # Button to run the code
         if st.button("Run Code", key=name):
             if code_content.strip():
-                st.info("Compiling and running your code...")
+                st.info("Compiling and running the code...")
                 result = compile_c_code(API_URL, CLIENT_ID, CLIENT_SECRET, code_content)
-                if "error" in result:
+                if result["error"]:
                     st.error(result["error"])
                 else:
-                    st.subheader("Output:")
                     st.text(result["output"])
 
     def display_dashboard(self):
