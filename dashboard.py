@@ -76,7 +76,37 @@ class CreateDashboard:
                 }
             },
             "dynamic_structures": "",
-            "sorting_algorithms": "",
+            "sorting_algorithms": {
+                "introduction":{
+                    "text": "introduction.txt",
+                    "images": None
+                },
+                "bubble_sort": {
+                    "text": "bubble_sort.txt",
+                    "images": {
+                        "BubbleSort.png": "Ilustración del algoritmo Bubble Sort"
+                    }
+                },
+                "insertion_sort": {
+                    "text": "insertion_sort.txt",
+                    "images": {
+                        "queue_life.jpg": "Cola en la vida real",
+                        "InsertionSort.png": "Ilustración del Insertion Sort"
+                    }
+                },
+                "merge_sort": {
+                    "text": "merge_sort.txt",
+                    "images": {
+                        "MergeSort.png": "Ilustración del Merge Sort"
+                    }
+                },
+                "quick_sort": {
+                    "text": "quick_sort.txt",
+                    "images": {
+                        "Quicksort.png": "Ilustración del Quick Sort"
+                    }
+                }
+            },
             "searching_algorithms": ""
         }
         self.tabs = {
