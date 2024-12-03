@@ -111,7 +111,8 @@ class CreateDashboard:
         }
         self.tabs = {
             "intro": ["Introducción"],
-            "static_structures": ["Introducción", "Arreglos", "Asignación de Memoria Dinámica", "Colas", "Stacks"]
+            "static_structures": ["Introducción", "Arreglos", "Asignación de Memoria Dinámica", "Colas", "Stacks"],
+            "sorting_algorithms": ["Introducción", "Bubble Sort", "Insertion Sort","Merge Sort", "Quick Sort"]
         }
         self.image_formats = [".jpg", ".png"]
         self.language_code = "c"
