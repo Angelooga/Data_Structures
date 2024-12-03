@@ -128,9 +128,9 @@ class CreateDashboard:
 
         # Button to run the code
         if st.button("Run Code", key=name):
-            if c_code.strip():
+            if code_content.strip():
                 st.info("Compiling and running your code...")
-                result = compile_c_code(API_URL, CLIENT_ID, CLIENT_SECRET, c_code)
+                result = compile_c_code(API_URL, CLIENT_ID, CLIENT_SECRET, code_content)
                 if "error" in result:
                     st.error(result["error"])
                 else:
