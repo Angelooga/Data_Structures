@@ -1,0 +1,23 @@
+## Merge Sort
+### Descripción
+Merge Sort es un algoritmo de ordenamiento basado en el paradigma divide y vencerás. Divide el arreglo en partes más pequeñas, las ordena de forma recursiva y luego las combina (merge) para obtener el arreglo final ordenado.
+
+Es particularmente eficiente y adecuado para conjuntos de datos grandes debido a su complejidad de tiempo logarítmica, que se mantiene constante incluso en los peores casos.
+### Cómo funciona?
+El algoritmo sigue estos pasos para llegar al numero indicado por el usuario:
+1. División: Divide recursivamente el arreglo en dos mitades hasta que cada subarreglo tenga un solo elemento (que, por definición, ya está ordenado).
+2. Conquista: Combina (merge) las sublistas ordenadas para formar sublistas más grandes, también ordenadas.
+3. Combinación: Repite el proceso hasta que todas las sublistas se hayan fusionado en una lista completamente ordenada.
+
+**Complejidad:**
+- **Siempre**: O(n log n) (Es en la unica que funciona el algoritmo)
+
+### Imagen detallada
+En la siguiente imagen se representa como es que **Merge sort** busca la variable en una lista y los pasos que hace para llegar a dicha variable solicitada por el usuario
+
+MergeSort.png
+
+### Codigo
+El siguiente codigo representa las funciones y variables que tiene **Merge sort** en el lenguaje de programacion C:
+
+code_merge_sort.txt

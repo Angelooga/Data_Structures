@@ -1,0 +1,10 @@
+# Algoritmos de Búsqueda
+
+El ordenamiento de datos, en ingles **sorting algorithm**, es uno de los pilares fundamentales de las ciencias de la computación y la programación. Los algoritmos de ordenamiento organizan elementos en un orden específico, como numérico ascendente, alfabético o basado en criterios personalizados. Este proceso es crucial para mejorar la eficiencia y legibilidad de los datos en numerosas aplicaciones,  por ejemplo:
+- En estructura de datos, los datos ordenados permiten búsquedas más rápidas y eficientes.
+- En interfaces de usuario, facilitan la organización de listas o productos en un sitio web.
+- En gráficos computacionales, el ordenamiento es esencial para técnicas como el z-buffering.
+
+Los algoritmos de ordenamiento varían en su enfoque, rendimiento y complejidad. Algunos, como Bubble Sort, son simples pero ineficientes para grandes conjuntos de datos, mientras que otros, como Quick Sort y Merge Sort, son altamente optimizados y aplicables a escenarios complejos. La elección del algoritmo adecuado depende de varios factores, como el tamaño del conjunto de datos, los requisitos de memoria, la estabilidad del ordenamiento y el tipo de datos a procesar. 
+
+A continuacion se dara una explicación breve de estos, los cuales son: **Bubble Sort**, **Insertion Sort**, **Quick Sort**, y **Merge Sort**. Estos 4 son principalmente los mas usados tanto en práctica como en ejercicios debido a su sistema facil de entender y desarrollar para aquellos que estan entrando al mundo de la programacion y por su uso en estructura de datos

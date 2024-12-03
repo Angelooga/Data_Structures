@@ -1,0 +1,27 @@
+# Quick Sort
+
+### Descripción
+Quick Sort es un algoritmo de ordenamiento altamente eficiente que utiliza el paradigma divide y vencerás. Es conocido por su rapidez y flexibilidad, siendo uno de los algoritmos más utilizados para el ordenamiento interno (en memoria).
+
+### Cómo funciona?
+El algoritmo sigue los siguientes pasos y el proceso continúa hasta que los subarreglos sean de tamaño 1 o estén vacíos:
+1. Elección de un pivote: Se selecciona un elemento del arreglo como pivote (puede ser el primer elemento, el último, el medio o seleccionado aleatoriamente).
+2. Partición: El arreglo se divide en dos subarreglos:
+   - Los elementos menores o iguales al pivote.
+   - Los elementos mayores al pivote.
+3. Ordenamiento recursivo: Se aplica Quick Sort recursivamente a los dos subarreglos resultantes.
+4.Combinación implícita: No hay una etapa explícita de combinación; los subarreglos ya están ordenados en su lugar.
+
+**Complejidad:**
+- **Mejor caso**: O(n log n)
+- **Peor caso**: O(n^2) (cuando el pivote está mal elegido)
+
+### Imagen detallada
+En la siguiente imagen se representa como es que **Quick sort** busca la variable en una lista y los pasos que hace para llegar a dicha variable solicitada por el usuario
+
+Quicksort.png
+
+### Codigo
+El siguiente codigo representa las funciones y variables que tiene **Quick sort** en el lenguaje de programacion C:
+
+code_quick_sort.txt

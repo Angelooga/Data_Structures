@@ -1,0 +1,23 @@
+# Insertion Sort
+### Descripción
+Insertion Sort es un algoritmo de ordenamiento que construye la lista ordenada elemento por elemento, moviendo cada nuevo elemento a su posición correcta dentro de la lista ya ordenada. Es eficiente para arreglos pequeños o casi ordenados y es sencillo de implementar.
+### Cómo funciona?
+El algoritmo divide el arreglo en dos partes:
+1. Una sublista inicial (izquierda) que está ordenada.
+2. Una sublista restante (derecha) con elementos desordenados.
+
+Comienza con el primer elemento como una lista ordenada de tamaño 1. Luego, toma cada elemento de la lista desordenada y lo inserta en la posición correcta dentro de la lista ordenada, moviendo los elementos mayores hacia la derecha para hacer espacio. Este proceso se repite hasta que todos los elementos estén en la sublista ordenada.
+
+**Complejidad:**
+- **Mejor caso:** O(n)
+- **Peor caso:** O(n^2)
+
+### Imagen detallada
+En la siguiente imagen se representa como es que **Insertion sort** busca la variable en una lista y los pasos que hace para llegar a dicha variable solicitada por el usuario
+
+InsertionSort.png
+
+### Codigo
+El siguiente codigo representa las funciones y variables que tiene **Insertion sort** en el lenguaje de programacion C:
+
+code_insertion_sort.txt

@@ -1,0 +1,24 @@
+# Bubble Sort 
+
+### Descripción
+Bubble Sort es uno de los algoritmos de ordenamiento más simples y básicos en la informática. Su nombre proviene de la forma en que las burbujas (elementos más grandes o más pequeños) "flotan" hacia su posición correcta durante el proceso de ordenamiento.
+
+### Cómo funciona?
+El algoritmo recorre repetidamente la lista o arreglo y compara pares adyacentes de elementos. Si un par está en el orden incorrecto (por ejemplo, el primero es mayor que el segundo en un orden ascendente), los intercambia. Este proceso continúa hasta que no se necesiten más intercambios, lo que indica que la lista está ordenada.
+1. El ordenamiento se realiza en varias pasadas:
+2. En cada pasada, el elemento más grande "burbujea" hacia el final de la lista.
+Con cada iteración, se reduce el número de elementos a comparar, ya que los elementos al final ya están ordenados.
+
+**Complejidad:**
+- **Mejor caso**: O(n) (Cuando la lista ya está ordenada)
+- **Peor caso**: O(n²) (La lista esta completamente desordenada)
+
+### Imagen detallada
+En la siguiente imagen se representa como es que **Bubble sort** busca la variable en una lista y los pasos que hace para llegar a dicha variable solicitada por el usuario:
+
+BubbleSort.png
+
+### Código
+El siguiente codigo representa las funciones y variables que tiene **Bubble sort** en el lenguaje de programacion C:
+
+code_bubble_sort.txt
