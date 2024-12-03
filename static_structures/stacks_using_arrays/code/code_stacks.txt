@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+#define MAX_SIZE 100 // Tamaño máximo de la pila
+
+// Declaración global
+int stack[MAX_SIZE];
+int top = -1; // Indicador del elemento superior de la pila (-1 significa que está vacía)
+
+// Función para verificar si la pila está vacía
+bool isEmpty() {
+    return top == -1;
+}
+
+// Función para verificar si la pila está llena
+bool isFull() {
+    return top == MAX_SIZE - 1;
+}
+
+// Función para insertar un elemento en la pila (Push)
+void push(int value) {
+    if (isFull()) {
+        printf("Stack overflow: cannot push %d\n", value);
+        return;
+    }
+    stack[++top] = value; // Incrementar el índice y luego agregar el valor
+    printf("Pushed: %d\n", value);
+}
+
+// Función para eliminar un elemento de la pila (Pop)
+int pop() {
+    if (isEmpty()) {
+        printf("Stack underflow: cannot pop\n");
+        return -1;
+    }
+    int value = stack[top--]; // Obtener el valor y luego decrementar el índice
+    printf("Popped: %d\n", value);
+    return value;
+}
+
+// Función para ver el elemento superior de la pila
+int peek() {
+    if (isEmpty()) {
+        printf("Stack is empty: no element to peek\n");
+        return -1;
+    }
+    return stack[top];
+}
+
+// Función para mostrar todos los elementos de la pila
+void displayStack() {
+    if (isEmpty()) {
+        printf("Stack is empty\n");
+        return;
+    }
+    printf("Stack elements: ");
+    for (int i = top; i >= 0; i--) {
+        printf("%d ", stack[i]);
+    }
+    printf("\n");
+}
+
+// Función principal para ilustrar el uso de la pila
+int main() {
+    // Operaciones de ejemplo
+    push(10);
+    push(20);
+    push(30);
+    displayStack(); // Muestra: 30, 20, 10
+
+    printf("Peek: %d\n", peek()); // Muestra: 30
+
+    pop(); // Elimina 30
+    displayStack(); // Muestra: 20, 10
+
+    push(40);
+    displayStack(); // Muestra: 40, 20, 10
+
+    return 0;
+}

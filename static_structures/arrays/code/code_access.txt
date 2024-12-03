@@ -1,0 +1,8 @@
+#include <stdio.h>  
+int main() {  
+	int numeros[5] = {10, 20, 30, 40, 50};  
+	printf("El primer elemento del array es: %d\n", numeros[0]);  
+	printf("El tercer elemento del array es: %d\n", numeros[2]);  
+  
+   return 0;  
+}

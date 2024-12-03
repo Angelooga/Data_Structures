@@ -1,0 +1,80 @@
+# Pilas
+
+Una pila es una estructura de datos lineal fundamental en la informática, utilizada en muchos algoritmos y lenguajes de programación. En C, la pila sigue la regla LIFO (Last In, First Out): el último elemento en entrar es el primero en salir. Tanto la inserción de nuevos elementos como la eliminación de los existentes ocurren en el mismo extremo, denominado "tope" o top.
+
+stack.png
+
+### ¿Qué es una Pila en C?
+
+La pila es una estructura lineal en la que los elementos se agregan y eliminan desde el mismo extremo.
+Por ejemplo, imagina una pila de platos: para retirar el plato del fondo, primero debes quitar los platos superiores, respetando el orden en que fueron colocados.
+
+platos.jpg
+
+### Implementación con Arreglos Estáticos
+
+En este enfoque:
+
+- Se utiliza un arreglo de tamaño fijo como estructura subyacente de la pila.
+
+- Una variable top rastrea el índice del último elemento agregado.
+
+- Las operaciones push (insertar) y pop (eliminar) modifican esta variable para gestionar el tope de la pila.
+
+- La desventaja principal es que el tamaño de la pila es constante y no puede ajustarse dinámicamente.
+
+### Algoritmo para Insertar (Push)
+
+```c
+void push(int value) {
+    if (isFull()) {
+        printf("Stack overflow: cannot push %d\n", value);
+        return;
+    }
+    stack[++top] = value; // Incrementar 'top' y agregar el valor en esa posición
+    printf("Pushed: %d\n", value);
+}
+```
+
+##### Descripción:
+
+La función verifica si la pila está llena utilizando isFull().
+Si hay espacio, incrementa el índice top y coloca el nuevo valor en esa posición del arreglo.
+Se imprime un mensaje confirmando que el valor fue agregado.
+Si la pila está llena, se muestra un mensaje de error indicando desbordamiento (stack overflow).
+
+### Algoritmo para Eliminar (Pop)
+
+```c
+int pop() {
+    if (isEmpty()) {
+        printf("Stack underflow: cannot pop\n");
+        return -1;
+    }
+    int value = stack[top--]; // Recuperar el valor y decrementar 'top'
+    printf("Popped: %d\n", value);
+    return value;
+}
+```
+
+##### Descripción:
+
+La función verifica si la pila está vacía utilizando isEmpty().
+Si hay elementos, recupera el valor almacenado en la posición top del arreglo.
+Decrementa el índice top, indicando que ese elemento ha sido eliminado.
+Imprime el valor eliminado y lo retorna.
+Si la pila está vacía, muestra un mensaje de error indicando subdesbordamiento (stack underflow).
+
+### Problemas Comunes
+
+##### Stack Overflow (Desbordamiento):
+
+Ocurre cuando intentas insertar un elemento en una pila llena. Esto sucede porque la pila ha alcanzado su capacidad máxima y no puede almacenar más elementos.
+
+##### Stack Underflow (Subdesbordamiento):
+
+Ocurre cuando intentas eliminar o acceder a un elemento de una pila vacía. Dado que no hay elementos, la operación no puede completarse, y se genera un error.
+
+code_stacks.txt
+
+https://medium.com/@noransaber685/understanding-the-stack-data-structure-in-c-introduction-implementation-and-examples-8d3fb03de809

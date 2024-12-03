@@ -1,0 +1,68 @@
+# Arrays unidimensionales en C
+
+Los arrays unidimensionales son estructuras fundamentales en programación que consisten en una sola dimensión o fila.
+
+arreglos.png
+
+### Sintaxis de un array unidimensional en C
+
+```c
+dataType arrayName[arraySize];
+```
+
+- dataType: Tipo de datos de los elementos del array (e.g., int, float, char, double).
+- arrayName: Nombre del array, utilizado para referirse a él en el programa.
+- arraySize: Número de elementos del array; debe ser un entero positivo.
+
+code_sintaxis.txt
+
+### Acceso a los elementos del array
+
+Cada elemento del array se identifica por su índice, comenzando en 0 para el primer elemento y terminando en arraySize- 1.
+
+##### Sintaxis para acceder a un elemento
+
+```c
+arrayName[index];
+```
+
+- arrayName: Nombre del array.
+- index: Índice del elemento que se desea acceder.
+
+code_access.txt
+
+### Modificación de elementos
+
+Para modificar el valor de un elemento, se usa el operador de asignación = con el índice correspondiente:
+
+```c
+arrayName[index] = nuevoValor;
+```
+
+code_modification.txt
+
+# Arrays de 2 dimensiones en C
+
+2d_arreglos.jpg
+
+Un arreglo bidimensional (2D) se puede entender como un arreglo de arreglos, organizado en forma de matrices con filas y columnas. Este tipo de arreglo es útil para estructurar datos similares a una base de datos relacional, facilitando el manejo de grandes volúmenes de información que se pueden pasar a múltiples funciones según sea necesario.
+
+### Declaración de un arreglo bidimensional en C
+La sintaxis para declarar un arreglo 2D es la siguiente:
+
+```c
+data_type array_name[rows][columns];
+```
+
+### Inicialización de un arreglo 2D en C
+
+A diferencia de los arreglos unidimensionales, donde no es necesario especificar el tamaño si se declaran e inicializan al mismo tiempo, en los arreglos bidimensionales es obligatorio definir al menos la segunda dimensión. Un ejemplo de inicialización sería:
+
+```c
+int arr[4][3] = {{1, 2, 3}, {2, 3, 4}, {3, 4, 5}, {4, 5, 6}};
+```
+
+code_2d.txt
+
+Este formato permite organizar y manipular datos de manera eficiente dentro de programas en C.
+

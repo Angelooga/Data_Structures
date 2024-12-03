@@ -1,0 +1,94 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+#define MAX_SIZE 5 // Maximum size of the queue
+
+// Queue variables
+int queue[MAX_SIZE];
+int front = -1;
+int rear = -1;
+
+// Check if the queue is empty
+bool isEmpty() {
+    return front == -1;
+}
+
+// Check if the queue is full
+bool isFull() {
+    return (rear + 1) % MAX_SIZE == front;
+}
+
+// Add an element to the queue
+void enqueue(int value) {
+    if (isFull()) {
+        printf("Queue overflow: cannot enqueue %d\n", value);
+        return;
+    }
+    if (isEmpty()) {
+        front = 0;
+    }
+    rear = (rear + 1) % MAX_SIZE;
+    queue[rear] = value;
+    printf("Enqueued: %d\n", value);
+}
+
+// Remove an element from the queue
+int dequeue() {
+    if (isEmpty()) {
+        printf("Queue underflow: cannot dequeue\n");
+        return -1;
+    }
+    int value = queue[front];
+    if (front == rear) {
+        // The queue becomes empty
+        front = -1;
+        rear = -1;
+    } else {
+        front = (front + 1) % MAX_SIZE;
+    }
+    printf("Dequeued: %d\n", value);
+    return value;
+}
+
+// Display the elements of the queue
+void displayQueue() {
+    if (isEmpty()) {
+        printf("Queue is empty\n");
+        return;
+    }
+    printf("Queue elements: ");
+    int i = front;
+    do {
+        printf("%d ", queue[i]);
+        i = (i + 1) % MAX_SIZE;
+    } while (i != (rear + 1) % MAX_SIZE);
+    printf("\n");
+}
+
+// Example usage
+int main() {
+    // Predefined data
+    int data[] = {10, 20, 30, 40, 50};
+    int size = sizeof(data) / sizeof(data[0]);
+
+    // Enqueue data
+    for (int i = 0; i < size; i++) {
+        enqueue(data[i]);
+    }
+
+    displayQueue();
+
+    // Dequeue some elements
+    dequeue();
+    dequeue();
+
+    displayQueue();
+
+    // Add more elements
+    enqueue(60);
+    enqueue(70);
+
+    displayQueue();
+
+    return 0;
+}

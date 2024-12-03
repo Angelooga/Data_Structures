@@ -1,0 +1,54 @@
+# Asignación de memoria dinámica en C
+
+En C, un lenguaje estructurado, existen reglas fijas para la programación, incluyendo cómo cambiar el tamaño de un arreglo. Este proceso es conocido como Asignación de Memoria Dinámica y permite ajustar el tamaño de una estructura de datos, como un arreglo, durante la ejecución del programa.
+
+### Ejemplos de necesidad de memoria dinámica
+
+1. Reducir el tamaño de un arreglo: Si un arreglo tiene 9 posiciones, pero solo se necesitan 5, las 4 posiciones restantes desperdician memoria.
+2. Incrementar el tamaño de un arreglo: Si un arreglo de 9 posiciones está lleno y se requieren 3 elementos adicionales, el tamaño debe aumentar a 12.
+
+### Funciones para asignación dinámica en C
+
+C proporciona 4 funciones, definidas en la biblioteca <stdlib.h>, para manejar la memoria dinámica:
+
+```c
+- malloc()
+- calloc()
+- free()
+- realloc()
+```
+
+En este trabajo se detallan las funciones malloc() y free():
+
+### Función malloc()
+
+La función malloc (memory allocation) asigna dinámicamente un bloque grande de memoria con el tamaño especificado. Retorna un puntero de tipo void que se puede convertir a cualquier tipo de puntero. *Nota*: No inicializa la memoria, por lo que los bloques contienen valores basura por defecto.
+
+```c
+ptr = (cast-type*) malloc(byte-size);
+```
+
+##### Ejemplo
+
+```c
+ptr = (int*) malloc(100 * sizeof(int));
+```
+
+code_malloc.txt
+
+### Función free()
+
+La función free libera dinámicamente la memoria previamente asignada con malloc() o calloc(). Es indispensable liberar la memoria no utilizada para evitar desperdicio de recursos.
+
+```c
+free(ptr);
+```
+
+code_free.txt
+
+La asignación dinámica de memoria mejora la eficiencia al permitir que los programas ajusten el uso de memoria según sus necesidades en tiempo de ejecución.
+
+https://www.geeksforgeeks.org/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/
+
+
+

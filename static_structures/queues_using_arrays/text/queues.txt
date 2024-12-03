@@ -1,0 +1,103 @@
+# Colas
+
+Una cola (queue) es una estructura de datos lineal en C que sigue la regla FIFO (First In, First Out), es decir, el primero en entrar es el primero en salir. En una cola implementada con arreglos, los elementos se agregan en la parte trasera (rear) y se eliminan en la parte delantera (front). Durante estas operaciones, se verifican las condiciones de desbordamiento (overflow) y subdesbordamiento (underflow) para evitar errores. Además, los elementos de la cola se pueden mostrar mediante una operación de visualización.
+
+### Ejemplo de la Vida Real
+
+Imagina que estás en una fila para comprar boletos de cine. La persona que llegó primero a la fila será la primera en ser atendida. Este comportamiento refleja el funcionamiento de una cola: los elementos se procesan en el orden en que llegan.
+
+queue_life.jpg
+
+### Funcionamiento de una Cola en C
+
+Una cola en C no es más que una estructura de datos lineal que sigue el principio FIFO. Los elementos se insertan desde la parte trasera (rear) y se eliminan desde el frente (front), similar a cómo funciona una fila de boletos. Es una manera eficiente de procesar datos en un orden específico.
+
+cola_estructura.png
+
+### Implementación de una Cola con Arreglos en C
+
+##### Definición del Tamaño de la Cola
+
+Antes de ejecutar el programa, es necesario definir el tamaño máximo de la cola mediante la constante MAX_SIZE. Esto garantiza que la cola no pueda exceder su capacidad.
+
+```c
+#define MAX_SIZE 100
+```
+
+##### Variables Globales
+
+- queue: Arreglo que almacena los elementos de la cola.
+- front y rear: Indicadores del frente y la parte trasera de la cola. Inicialmente se establecen en -1 para indicar que la cola está vacía.
+ 
+##### Operación de Inserción (Enqueue)
+La inserción de elementos se realiza desde la parte trasera (rear) de la cola. Esta operación también verifica si la cola está llena antes de agregar un nuevo elemento.
+
+```c
+void enqueue(int value) {
+    if (isFull()) {
+        printf("Queue overflow: cannot enqueue %d\n", value);
+        return;
+    }
+    if (isEmpty()) {
+        front = 0;
+    }
+    rear = (rear + 1) % MAX_SIZE;
+    queue[rear] = value;
+    printf("Enqueued: %d\n", value);
+}
+```
+
+##### Operación de Eliminación (Dequeue)
+La eliminación se realiza desde la parte delantera (front) de la cola. Cuando un elemento se elimina, el espacio que ocupaba queda disponible para futuros elementos. Si la cola se vacía por completo, los indicadores front y rear se restablecen a -1.
+
+```c
+int dequeue() {
+    if (isEmpty()) {
+        printf("Queue underflow: cannot dequeue\n");
+        return -1;
+    }
+    int value = queue[front];
+    if (front == rear) {
+        // La cola queda vacía
+        front = -1;
+        rear = -1;
+    } else {
+        front = (front + 1) % MAX_SIZE;
+    }
+    printf("Dequeued: %d\n", value);
+    return value;
+}
+```
+
+### Consideraciones Adicionales
+
+##### Eficiencia de Memoria
+
+En colas circulares (como en este ejemplo), el uso del operador módulo (%) permite reutilizar los índices en el arreglo, evitando desperdiciar espacio.
+
+##### Verificación de Estados
+
+¿Está vacía? Una cola está vacía si front == -1.
+
+¿Está llena? Una cola está llena si (rear + 1) % MAX_SIZE == front.
+
+##### Usos Prácticos
+
+Las colas son útiles para problemas que requieren un orden específico de procesamiento, como:
+
+- Gestión de tareas en sistemas operativos.
+
+- Control de flujos de datos en redes.
+
+- Implementación de algoritmos BFS (Breadth-First Search).
+
+- Limitaciones de Arreglos Estáticos
+
+Aunque las colas implementadas con arreglos son fáciles de usar, tienen desventajas:
+
+- El tamaño debe definirse previamente (no es dinámico).
+- Podrían quedar espacios sin utilizar si no se gestiona adecuadamente.
+
+code_queues.txt
+
+https://medium.com/@noransaber685/understanding-queue-data-structures-in-c-the-first-in-first-out-principle-fbd1f89d40dc
