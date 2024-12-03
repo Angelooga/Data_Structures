@@ -136,8 +136,6 @@ class CreateDashboard:
                 else:
                     st.subheader("Output:")
                     st.text(result["output"])
-        else:
-            st.warning("Please enter some C code.")
 
     def display_dashboard(self):
         """
