@@ -7,37 +7,24 @@ import os
 # b0397a76fb2b6b66b20aec7efdd912
 # 11b56774af2ce105e788290a0f27e612ecfb7d7c54dd67c23a6cfad9e6875f0d
 
-def run_c_code(code):
-    """
-    Compiles and runs the given C code, then displays the output or errors.
-    :param code: str
-    :return:
-    """
-    # Save the code to a temporary file
-    with open("temp.c", "w") as f:
-        f.write(code)
+# JDoodle API settings
+API_URL = "https://api.jdoodle.com/v1/execute"
+CLIENT_ID = "b0397a76fb2b6b66b20aec7efdd912"
+CLIENT_SECRET = "11b56774af2ce105e788290a0f27e612ecfb7d7c54dd67c23a6cfad9e6875f0d"
 
-    # Compile the C code
-    compile_result = subprocess.run(["gcc", "temp.c", "-o", "temp.out"], capture_output=True, text=True)
-
-    if compile_result.returncode != 0:
-        # Display compilation errors
-        st.error(f"Compilation failed:\n{compile_result.stderr}")
+def compile_c_code(api_url, client_id, client_secret, code):
+    payload = {
+        "script": code,
+        "language": "c",
+        "versionIndex": "0",
+        "clientId": client_id,
+        "clientSecret": client_secret
+    }
+    response = requests.post(api_url, json=payload)
+    if response.status_code == 200:
+        return response.json()
     else:
-        # Run the compiled binary
-        run_result = subprocess.run(["./temp.out"], capture_output=True, text=True)
-
-        # Display the output or runtime errors
-        if run_result.returncode != 0:
-            st.error(f"Runtime error:\n{run_result.stderr}")
-        else:
-            st.text_area("Output:", value=run_result.stdout, height=200)
-
-    # Clean up temporary files
-    if os.path.exists("temp.c"):
-        os.remove("temp.c")
-    if os.path.exists("temp.out"):
-        os.remove("temp.out")
+        return {"error": f"Error {response.status_code}: {response.text}"}
 
 class CreateDashboard:
     def __init__(self, topic):
@@ -144,7 +131,16 @@ class CreateDashboard:
 
         # Button to run the code
         if st.button("Run Code", key=name):
-            run_c_code(selected_code)
+            if c_code.strip():
+                st.info("Compiling and running your code...")
+                result = compile_c_code(API_URL, CLIENT_ID, CLIENT_SECRET, c_code)
+                if "error" in result:
+                    st.error(result["error"])
+                else:
+                    st.subheader("Output:")
+                    st.text(result["output"])
+        else:
+            st.warning("Please enter some C code.")
 
     def display_dashboard(self):
         """
