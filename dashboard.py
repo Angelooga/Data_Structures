@@ -2,6 +2,7 @@
 # from code import CodeContent
 import streamlit as st
 import subprocess
+import requests
 import os
 
 # JDoodle API settings
