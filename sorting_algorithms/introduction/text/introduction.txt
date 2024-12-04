@@ -1,4 +1,4 @@
-# Algoritmos de Búsqueda
+# Algoritmos de Ordenamiento
 
 El ordenamiento de datos, en ingles **sorting algorithm**, es uno de los pilares fundamentales de las ciencias de la computación y la programación. Los algoritmos de ordenamiento organizan elementos en un orden específico, como numérico ascendente, alfabético o basado en criterios personalizados. Este proceso es crucial para mejorar la eficiencia y legibilidad de los datos en numerosas aplicaciones,  por ejemplo:
 - En estructura de datos, los datos ordenados permiten búsquedas más rápidas y eficientes.
