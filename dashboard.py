@@ -96,7 +96,7 @@ class CreateDashboard:
                     "text": "circular_lists.txt",
                     "images": {
                         "circular_representation.png": None,
-                        "simple_circular": None
+                        "simple_circular.png": None
                     }
                 },
                 "binary_tree": {
