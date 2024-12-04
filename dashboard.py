@@ -141,7 +141,18 @@ class CreateDashboard:
                     }
                 }
             },
-            "searching_algorithms": ""
+            "searching_algorithms": {
+                    "search_algorithms": {
+                    "text": "SearchAlgorithm.txt",
+                    "images": {
+                        "bst_1.png": None,
+                        "bst_2.png": None,
+                        "busqueda_binaria.png": None,
+                        "busqueda_secuencial.png": None,
+                        "complejidad_busqueda_binaria.png": None
+                    }
+                }
+            }
         }
         self.tabs = {
             "intro": ["Introducción"],
@@ -149,6 +160,7 @@ class CreateDashboard:
             "dynamic_structures": ["Introducción", "Listas Ligadas", "Listas Doblemente Ligadas", "Listas Circulares",
                                    "Árbol Binario"],
             "sorting_algorithms": ["Introducción", "Bubble Sort", "Insertion Sort","Merge Sort", "Quick Sort"],
+            "search_algorithms": ["Algoritmos de Búsqueda"]
         }
         self.image_formats = [".jpg", ".png"]
         self.language_code = "c"
