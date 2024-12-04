@@ -6,7 +6,7 @@ Una lista enlazada circular es un tipo especial de lista enlazada en la que todo
 
 En una lista enlazada simple circular , cada nodo tiene un solo puntero llamado puntero next. El puntero siguiente del último nodo apunta al primer nodo y esto da como resultado la formación de un círculo. En este tipo de lista enlazada, solo podemos movernos por la lista en una dirección.
 
-simple_circular.png 
+simple_circular.png
 
 ### Lista circular doblemente enlazada
 
