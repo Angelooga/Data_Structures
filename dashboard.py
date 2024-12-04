@@ -141,7 +141,7 @@ class CreateDashboard:
                     }
                 }
             },
-            "searching_algorithms": {
+            "search_algorithms": {
                     "search_algorithms": {
                     "text": "SearchAlgorithm.txt",
                     "images": {
@@ -160,7 +160,7 @@ class CreateDashboard:
             "dynamic_structures": ["Introducción", "Listas Ligadas", "Listas Doblemente Ligadas", "Listas Circulares",
                                    "Árbol Binario"],
             "sorting_algorithms": ["Introducción", "Bubble Sort", "Insertion Sort","Merge Sort", "Quick Sort"],
-            "searching_algorithms": ["Algoritmos de Búsqueda"]
+            "search_algorithms": ["Algoritmos de Búsqueda"]
         }
         self.image_formats = [".jpg", ".png"]
         self.language_code = "c"
