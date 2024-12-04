@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+// Función para realizar la búsqueda lineal
+int busquedaLineal(int arreglo[], int n, int valor) {
+    for (int i = 0; i < n; i++) {
+        if (arreglo[i] == valor) {
+            return i; // Devuelve la posición si encuentra el valor
+        }
+    }
+    return -1; // Devuelve -1 si no se encuentra el valor
+}
+
+int main() {
+    // Definir el arreglo y su tamaño
+    int arreglo[] = {34, 78, 12, 90, 23, 56};
+    int n = sizeof(arreglo) / sizeof(arreglo[0]);
+    int valorBuscado = 90;
+
+    // Llamar a la función de búsqueda
+    int resultado = busquedaLineal(arreglo, n, valorBuscado);
+
+    // Mostrar el resultado
+    if (resultado != -1) {
+        printf("El valor %d se encuentra en la posición %d.\n", valorBuscado, resultado);
+    } else {
+        printf("El valor %d no se encuentra en el arreglo.\n", valorBuscado);
+    }
+
+    return 0;
+}

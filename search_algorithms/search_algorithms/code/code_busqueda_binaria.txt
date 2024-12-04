@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+// Función para realizar la búsqueda binaria
+int busquedaBinaria(int arreglo[], int n, int valor) {
+    int inicio = 0;         // Límite inferior
+    int fin = n - 1;        // Límite superior
+
+    while (inicio <= fin) {
+        int medio = inicio + (fin - inicio) / 2; // Calcular el punto medio
+
+        // Verificar si el elemento en medio es el valor buscado
+        if (arreglo[medio] == valor) {
+            return medio;
+        }
+
+        // Si el valor es menor, buscar en la mitad izquierda
+        if (arreglo[medio] > valor) {
+            fin = medio - 1;
+        }
+        // Si el valor es mayor, buscar en la mitad derecha
+        else {
+            inicio = medio + 1;
+        }
+    }
+
+    return -1; // Si no se encuentra el valor
+}
+
+int main() {
+    // Definir un arreglo ordenado
+    int arreglo[] = {12, 23, 34, 45, 56, 67, 78, 89, 90};
+    int n = sizeof(arreglo) / sizeof(arreglo[0]);
+    int valorBuscado = 45;
+
+    // Llamar a la función de búsqueda
+    int resultado = busquedaBinaria(arreglo, n, valorBuscado);
+
+    // Mostrar el resultado
+    if (resultado != -1) {
+        printf("El valor %d se encuentra en la posición %d.\n", valorBuscado, resultado);
+    } else {
+        printf("El valor %d no se encuentra en el arreglo.\n", valorBuscado);
+    }
+
+    return 0;
+}

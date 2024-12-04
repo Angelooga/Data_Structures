@@ -1,0 +1,95 @@
+# Algoritmos de Búsqueda
+
+### ¿Qué son los Algoritmos de Búsqueda?
+
+Son un conjunto de técnicas fundamentales en informática, cuyo objetivo principal es localizar elementos específicos dentro de estructuras de datos. Estas estructuras pueden incluir arreglos, listas, árboles, grafos, tablas hash, bases de datos y más. La importancia de estos algoritmos radica en que muchas aplicaciones modernas, desde los motores de búsqueda en internet hasta los sistemas de inteligencia artificial, dependen de la capacidad de buscar y recuperar información de manera eficiente
+
+Podemos ver un ejemplo para entender mejor:
+
+busqueda_binaria.png
+
+En este caso podemos entonces repetir el proceso con la mitad superior. Comenzar en el ítem central y compararlo con el valor que estamos buscando. Una vez más, o lo encontramos o dividimos la lista por la mitad, eliminando por tanto otra gran parte de nuestro espacio de búsqueda posible. 
+
+### Clasificación de algoritmos de búsqueda:
+Existen numerosos tipos de algoritmos de búsqueda, que se agrupan según la estrategia utilizada o la estructura de datos involucrada. Por ejemplo:
+
+Búsquedas lineales (secuencial), que recorren los datos uno por uno, ideales para conjuntos pequeños o no ordenados.
+Búsquedas binarias, que aprovechan estructuras ordenadas para dividir el espacio de búsqueda, logrando una gran eficiencia en datos grandes.
+Búsquedas en grafos, como el BFS (Breadth-First Search) y el DFS (Depth-First Search), que exploran redes complejas de nodos, como redes sociales o sistemas de rutas.
+Búsquedas hash, que utilizan funciones matemáticas para localizar elementos en tiempo promedio constante.
+
+### Complejidad de los algoritmos de Busqueda
+
+La complejidad de los algoritmos de búsqueda es una medida fundamental que describe cuánto tiempo (complejidad temporal) o cuánta memoria (complejidad espacial) requiere un algoritmo para completar su tarea en función del tamaño del conjunto de datos. Es crucial para evaluar su eficiencia y determinar qué algoritmo es más adecuado para un problema dado.
+
+Poddemos verlo de mejor manera en la siguiente tabla:
+
+complejidad_busqueda_binaria.png
+
+En resumen, podemos decir que la complejidad de los algoritmos de búsqueda varía ampliamente según la estructura de datos y el enfoque empleado.
+
+###Ejemplos
+
+##### Busqueda Lineal (Secuencial)
+
+La búsqueda lineal es el algoritmo más simple para encontrar un elemento en una lista o arreglo. Consiste en recorrer secuencialmente cada elemento de la estructura de datos y comparar uno por uno con el valor buscado hasta encontrarlo o llegar al final.
+
+Ventajas:
+
+Fácil de implementar.
+Funciona con datos no ordenados.
+
+Desventajas:
+Ineficiente para conjuntos de datos grandes O(n) en el peor caso).
+
+busqueda_secuencial.png
+
+##### Búsqueda Binaria
+
+La búsqueda binaria es un algoritmo eficiente que se utiliza para encontrar un elemento en una lista ordenada. Divide el espacio de búsqueda en mitades sucesivas, descartando la mitad irrelevante en cada paso. Este enfoque aprovecha el orden de los datos para reducir el número de comparaciones necesarias.
+
+Ventajas:
+Mucho más rápida que la búsqueda lineal en listas grandes (𝑂(log⁡𝑛)
+O(logn) en el peor caso) Ideal para conjuntos de datos estáticos y ordenados.
+
+Desventajas:
+Requiere que los datos estén previamente ordenados.
+No es eficiente para conjuntos de datos dinámicos que cambian frecuentemente.
+
+busqueda_binaria.png
+
+code_busqueda_binaria.txt
+
+##### Búsqueda BST
+
+La búsqueda en un *árbol binario de búsqueda* (BST) aprovecha la estructura especial del árbol:
+    Todos los nodos en el subárbol izquierdo tienen valores menores que el nodo raíz.
+    Todos los nodos en el subárbol derecho tienen valores mayores que el nodo raíz.
+Esta propiedad permite buscar de manera eficiente al comparar el valor buscado con el      nodo actual y desplazarse hacia el subárbol izquierdo o derecho según corresponda.
+
+Ventajas:
+Operación eficiente en árboles balanceados (𝑂(log𝑛)Puede manejar grandes conjuntos de datos dinámicos.
+
+Desventajas:
+Si el árbol está desbalanceado, el rendimiento puede degradarse a O(n) en el peor caso.
+La inserción/eliminación pueden requerir operaciones adicionales para mantener el balance del árbol.
+
+bst_1.png
+
+bst_2.png
+
+code_bst.txt
+
+##### Busqueda Hash
+
+La búsqueda hash es un método eficiente que utiliza una estructura de datos conocida como tabla hash para localizar un valor de manera rápida. Este enfoque convierte la clave de búsqueda en una posición dentro de la tabla mediante una función hash. La búsqueda hash es ideal para grandes conjuntos de datos, donde se requiere acceso rápido.
+
+Ventajas:
+Tiempo de búsqueda promedio constante O(1)) en operaciones bien distribuidas.Eficiente para datos no ordenados y acceso directo.
+
+Desventajas:
+Requiere una buena función hash para minimizar colisiones.
+Las colisiones (cuando dos claves hash se asignan al mismo índice) pueden degradar el rendimiento.
+La tabla hash consume más memoria que otros métodos.
+
+code_hash.txt

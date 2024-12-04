@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Definición del nodo del BST
+typedef struct Nodo {
+    int valor;
+    struct Nodo* izquierda;
+    struct Nodo* derecha;
+} Nodo;
+
+// Función para crear un nuevo nodo
+Nodo* nuevoNodo(int valor) {
+    Nodo* nodo = (Nodo*)malloc(sizeof(Nodo));
+    nodo->valor = valor;
+    nodo->izquierda = NULL;
+    nodo->derecha = NULL;
+    return nodo;
+}
+
+// Función para insertar un valor en el BST
+Nodo* insertar(Nodo* raiz, int valor) {
+    if (raiz == NULL) {
+        return nuevoNodo(valor);
+    }
+    if (valor < raiz->valor) {
+        raiz->izquierda = insertar(raiz->izquierda, valor);
+    } else if (valor > raiz->valor) {
+        raiz->derecha = insertar(raiz->derecha, valor);
+    }
+    return raiz;
+}
+
+// Función para buscar un valor en el BST
+Nodo* buscar(Nodo* raiz, int valor) {
+    if (raiz == NULL || raiz->valor == valor) {
+        return raiz; // Retorna el nodo si se encuentra o NULL si no
+    }
+    if (valor < raiz->valor) {
+        return buscar(raiz->izquierda, valor);
+    } else {
+        return buscar(raiz->derecha, valor);
+    }
+}
+
+// Función principal
+int main() {
+    Nodo* raiz = NULL;
+
+    // Insertar elementos en el BST
+    raiz = insertar(raiz, 50);
+    insertar(raiz, 30);
+    insertar(raiz, 70);
+    insertar(raiz, 20);
+    insertar(raiz, 40);
+    insertar(raiz, 60);
+    insertar(raiz, 80);
+
+    int valorBuscado = 40;
+
+    // Buscar el valor en el BST
+    Nodo* resultado = buscar(raiz, valorBuscado);
+
+    // Mostrar el resultado
+    if (resultado != NULL) {
+        printf("El valor %d se encuentra en el árbol.\n", valorBuscado);
+    } else {
+        printf("El valor %d no se encuentra en el árbol.\n", valorBuscado);
+    }
+
+    return 0;
+}

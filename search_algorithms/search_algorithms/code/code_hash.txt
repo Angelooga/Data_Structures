@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Definición del nodo para el encadenamiento
+typedef struct Nodo {
+    int clave;
+    struct Nodo* siguiente;
+} Nodo;
+
+// Tamaño de la tabla hash
+#define TAMANIO_TABLA 10
+
+// Tabla hash
+Nodo* tablaHash[TAMANIO_TABLA];
+
+// Función hash
+int funcionHash(int clave) {
+    return clave % TAMANIO_TABLA;
+}
+
+// Insertar clave en la tabla hash
+void insertar(int clave) {
+    int indice = funcionHash(clave);
+    Nodo* nuevoNodo = (Nodo*)malloc(sizeof(Nodo));
+    nuevoNodo->clave = clave;
+    nuevoNodo->siguiente = tablaHash[indice];
+    tablaHash[indice] = nuevoNodo;
+}
+
+// Buscar clave en la tabla hash
+int buscar(int clave) {
+    int indice = funcionHash(clave);
+    Nodo* actual = tablaHash[indice];
+    while (actual != NULL) {
+        if (actual->clave == clave) {
+            return 1; // Clave encontrada
+        }
+        actual = actual->siguiente;
+    }
+    return 0; // Clave no encontrada
+}
+
+// Mostrar tabla hash
+void mostrarTabla() {
+    for (int i = 0; i < TAMANIO_TABLA; i++) {
+        printf("Índice %d: ", i);
+        Nodo* actual = tablaHash[i];
+        while (actual != NULL) {
+            printf("%d -> ", actual->clave);
+            actual = actual->siguiente;
+        }
+        printf("NULL\n");
+    }
+}
+
+// Función principal
+int main() {
+    // Inicializar tabla hash
+    for (int i = 0; i < TAMANIO_TABLA; i++) {
+        tablaHash[i] = NULL;
+    }
+
+    // Insertar claves
+    insertar(15);
+    insertar(25);
+    insertar(35);
+    insertar(20);
+    insertar(30);
+
+    // Mostrar tabla hash
+    printf("Contenido de la tabla hash:\n");
+    mostrarTabla();
+
+    // Buscar claves
+    int claveBuscada = 25;
+    if (buscar(claveBuscada)) {
+        printf("La clave %d se encuentra en la tabla hash.\n", claveBuscada);
+    } else {
+        printf("La clave %d no se encuentra en la tabla hash.\n", claveBuscada);
+    }
+
+    return 0;
+}
